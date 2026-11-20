@@ -1,0 +1,14 @@
+node_modules/
+.npm-cache/
+nodejs/
+dist/
+*.zip
+public/media/
+public/data/
+*.local
+.env
+.env.local
+.env.*.local
+.DS_Store
+Thumbs.db
+.shots/

@@ -1,0 +1,10 @@
+{
+  // ESA Pages 项目名；不存在时会自动创建
+  "name": "photo-atlas",
+  "installCommand": "npm install",
+  "buildCommand": "npm run build",
+  "assets": {
+    "directory": "./dist",
+    "notFoundStrategy": "singlePageApplication"
+  }
+}

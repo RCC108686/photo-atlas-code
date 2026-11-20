@@ -1,0 +1,39 @@
+{
+  "name": "photo-atlas",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "engines": {
+    "node": ">=20.19"
+  },
+  "scripts": {
+    "dev": "node scripts/build-catalog.mjs && vite",
+    "prebuild": "node scripts/build-catalog.mjs",
+    "build": "vue-tsc --noEmit && vite build && node scripts/strip-media.mjs",
+    "preview": "vite preview",
+    "serve": "node scripts/serve-dist.mjs",
+    "deploy:cf": "npm run build && npx wrangler pages deploy dist --project-name photo-atlas --branch main",
+    "media:upload": "node scripts/upload-media.mjs",
+    "catalog": "node scripts/build-catalog.mjs",
+    "catalog:force": "node scripts/build-catalog.mjs --force",
+    "demo:gen": "node scripts/generate-demo.mjs",
+    "demo:clean": "node scripts/clean-demo.mjs",
+    "new": "node scripts/new-entry.mjs"
+  },
+  "dependencies": {
+    "fuse.js": "^7.1.0",
+    "vue": "^3.5.18",
+    "vue-router": "^4.5.1"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.1.11",
+    "@types/node": "^24.1.0",
+    "@vitejs/plugin-vue": "^6.0.1",
+    "ali-oss": "^6.23.0",
+    "sharp": "^0.34.3",
+    "tailwindcss": "^4.1.11",
+    "typescript": "~5.8.3",
+    "vite": "^7.0.6",
+    "vue-tsc": "^3.0.3"
+  }
+}
